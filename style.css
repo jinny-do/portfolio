@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(247, 247, 235);
+  background-color: rgb(247, 247, 238);
 }
 
 .container {
@@ -45,7 +45,18 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 50px;
   padding: 0 80px;
+  opacity: 0;
+  transform: translateY(40px); /* 아래에서 시작 */
+  animation: fadeUp 0.8s ease-out forwards;
 }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .profile-img {
   padding-top: 100%;
   background-image: url('./img/profile.png');
@@ -54,6 +65,7 @@ body {
   background-repeat: no-repeat;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation-delay: 0.2s;
 }
 
 .profile-info {
@@ -61,6 +73,7 @@ body {
   flex-direction: column;
   gap: 15px;
   justify-content: center;
+  animation-delay: 0.4s;
 }
 
 .profile-info > h1 {
@@ -78,12 +91,40 @@ body {
   display: flex;
   justify-content: center;
   gap: 30px;
+  animation-delay: 0.6s;
 }
 
 .profile-link > a {
   text-decoration: none;
-  border: 1px solid #000;
-  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 100px;
+
   border-radius: 50%;
-  color: #000;
+  color: #ffffff;
+  font-weight: 900;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-link > a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* 떠오르는 느낌 */
+}
+
+.resume-link {
+  background-color: #5fa06f;
+}
+
+.project-link {
+  background-color: #f1cf33;
+}
+
+.concat-link {
+  background-color: #e04b4b;
 }
