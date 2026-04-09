@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(247, 247, 238);
+  background-color: rgba(255, 254, 250, 0.795);
 }
 
 .container {
@@ -32,15 +32,17 @@ body {
   transition: all 0.5s;
 }
 
+/* main ---------------------------------------------- */
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 80px;
 }
 
 .info {
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 50px;
@@ -71,7 +73,7 @@ body {
 .profile-info {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
   animation-delay: 0.4s;
 }
@@ -94,29 +96,55 @@ body {
   animation-delay: 0.6s;
 }
 
-.profile-link > a {
+/* wave ------------------------------------- */
+.profile-link > .wave > a {
   text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 300px;
-  height: 100px;
-
+  width: 120px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
-  color: #ffffff;
+
+  color: #fff;
   font-weight: 900;
+
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.profile-link > a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* 떠오르는 느낌 */
+.wave {
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite;
 }
 
+/* 전체 영역 hover 시 전부 멈춤 */
+.profile-link:hover .wave {
+  transition: transform 0.3s ease;
+}
+
+/* 개별 버튼 hover 시 확대 */
+.profile-link a:hover {
+  transform: scale(1.1);
+}
+
+.wave:hover .resume-link {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(128, 255, 24, 0.2);
+}
+
+.wave:hover .project-link {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(238, 255, 0, 0.2);
+}
+
+.wave:hover .concat-link {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
+}
 .resume-link {
   background-color: #5fa06f;
 }
@@ -127,4 +155,84 @@ body {
 
 .concat-link {
   background-color: #e04b4b;
+}
+
+.wave:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.wave:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.wave:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* footer------------------------------------ */
+
+.footer {
+  border-top: 1px solid #ccc;
+  padding: 20px 100px;
+  margin: 0 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.github-icon {
+  width: 100px;
+}
+
+.notion-icon {
+  width: 100px;
+  margin-left: 5px;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.footer-main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-email {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  /* 모바일 스타일 */
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 20px;
+  }
 }
