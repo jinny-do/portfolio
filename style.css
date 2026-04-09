@@ -70,10 +70,13 @@ body {
   animation-delay: 0.2s;
 }
 
+.profile-img:hover {
+}
+
 .profile-info {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 50px;
   justify-content: center;
   animation-delay: 0.4s;
 }
@@ -87,6 +90,12 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.info-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .profile-link {
