@@ -20,6 +20,11 @@ body {
   padding: 20px;
 }
 
+.header a {
+  text-decoration: none;
+  color: #000;
+}
+
 .header-nav a {
   text-decoration: none;
   color: #000;
@@ -243,5 +248,28 @@ body {
     gap: 10px;
     justify-content: space-between;
     padding: 20px;
+  }
+
+  .profile-link > .wave > a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+
+    color: #fff;
+    font-weight: 900;
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .info {
+    padding: 0 20px; /* 또는 16px */
   }
 }
